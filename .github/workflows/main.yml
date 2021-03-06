@@ -29,10 +29,12 @@ jobs:
           python .bit/scripts/create.py
           
       - name: Setup Git Config
+        if: ${{github.event.head_commit.message != 'Initial commit'}}
         run: |
           git config user.name ${{ secrets.USERNAME }}
           git config user.email ${{ secrets.EMAIL }}
       - name: Commit Synced Changes
+        if: ${{github.event.head_commit.message != 'Initial commit'}}
         run: |
           chmod +x .bit/scripts/commit.sh
           .bit/scripts/commit.sh
