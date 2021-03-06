@@ -38,7 +38,7 @@ def createStep(week, title, descr, event, response, files, stepType, scripts):
   return content
 
 def createWorkStep(stepNo, count, script):
-  content = "      - name: Step %s\n        if: ${{steps.vars.outputs.count == %s}}\n        run: |\n          node .bit/tests/%s\n\n" %(stepNo, count, script)
+  content = "      - name: Step %s\n        if: ${{steps.vars.outputs.count == %s && github.event.head_commit.message != 'Update progress'}}\n        run: |\n          node .bit/tests/%s\n\n" %(stepNo, count, script)
   return content
 
 def createActions():
