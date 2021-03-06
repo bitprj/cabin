@@ -34,7 +34,7 @@ print(stepContent)
 print(responses)
 
 def createStep(week, title, descr, event, response, files, stepType, scripts):
-  content = "    - title: 'Week %s: %s'\n      description: %s\n      event: %s\n      stepType: %s\n      actions:\n        - type: respond\n          with: %s\n          files: %s\n          scripts: %s\n" % (week, title, descr, event, stepType, response, files, scripts)
+  content = "    - title: 'Week %s: %s'\n      description: '%s'\n      event: %s\n      stepType: %s\n      actions:\n        - type: respond\n          with: %s\n          files: %s\n          scripts: %s\n" % (week, title, descr, event, stepType, response, files, scripts)
   return content
 
 def createWorkStep(stepNo, count, script):
