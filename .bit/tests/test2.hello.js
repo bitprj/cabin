@@ -7,7 +7,7 @@ catch(e) {
 }
 
 let helloworld = hello()
-let test_output = "Hello World!"
+let test_output = "Hello Emily!"
 
 if(helloworld != test_output){
     throw new Error(`You're not fizzing well - Zan - Got: ${helloworld}, was expecting: ${test_output}.`)
