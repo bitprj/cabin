@@ -51,8 +51,8 @@ def createActions():
       if stepContent[responses[count]][3] == "checks":
         print("Week: "+str(i))
         print("Step: " + str(y))
-        print(createWorkStep(str(y+1), count, stepContent[responses[count]][4]))
-        start += createWorkStep(str(y+1), count, stepContent[responses[count]][4])
+        print(createWorkStep(str(y), count, stepContent[responses[count]][4]))
+        start += createWorkStep(str(y), count, stepContent[responses[count]][4])
       count += 1
     with open(".bit/workflows/week%s.yml" % (str(i+1)), "w+") as myfile:
       myfile.write(start)
